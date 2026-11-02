@@ -1,0 +1,34 @@
+{
+  "manifest_version": 1,
+  "id": "de.destination-one.integration.one-pages",
+  "name": "one.pages",
+  "version": "1.0.4",
+  "kind": "integration",
+  "runtime": "remote",
+  "summary": "Widgets, Pages (PWA) und Detailseiten aus one.data-Inhalten – für bestehende Websites oder als eigenständige Web-App.",
+  "publisher": {
+    "name": "destination.one GmbH",
+    "url": "https://www.destination.one",
+    "email": "info@destination.one"
+  },
+  "license": "Apache-2.0",
+  "categories": [
+    "integration",
+    "output",
+    "widgets",
+    "pwa"
+  ],
+  "data_egress": true,
+  "integration": {
+    "area": "output",
+    "app_url": "https://pages.playground.destination.one/",
+    "menu_label": "one.pages",
+    "api_access": {
+      "level": "write"
+    }
+  },
+  "remote": {
+    "base_url": "https://pages.playground.destination.one/integration/",
+    "secret_ref": "one_pages"
+  }
+}

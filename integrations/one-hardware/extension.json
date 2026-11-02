@@ -1,0 +1,34 @@
+{
+  "manifest_version": 1,
+  "id": "de.destination-one.integration.one-hardware",
+  "name": "one.hardware",
+  "version": "1.0.4",
+  "kind": "integration",
+  "runtime": "remote",
+  "summary": "Inhalte aus one.data vor Ort ausspielen – auf Infoscreens in Tourist-Informationen und über verwaltete Geräte.",
+  "publisher": {
+    "name": "destination.one GmbH",
+    "url": "https://www.destination.one",
+    "email": "info@destination.one"
+  },
+  "license": "Apache-2.0",
+  "categories": [
+    "integration",
+    "output",
+    "infoscreens",
+    "hardware"
+  ],
+  "data_egress": true,
+  "integration": {
+    "area": "output",
+    "app_url": "https://hardware.playground.destination.one/",
+    "menu_label": "one.hardware",
+    "api_access": {
+      "level": "read"
+    }
+  },
+  "remote": {
+    "base_url": "https://hardware.playground.destination.one/integration/",
+    "secret_ref": "one_hardware"
+  }
+}

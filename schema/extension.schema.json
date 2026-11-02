@@ -10,7 +10,7 @@
     "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]{2,99}$", "description": "Eindeutige ID, eigene Domain rückwärts, z. B. de.meinefirma.mein-format" },
     "name": { "type": "string", "minLength": 1 },
     "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+(-[0-9A-Za-z.-]+)?$", "description": "SemVer ohne v; muss zum Git-Tag vX.Y.Z passen" },
-    "kind": { "enum": ["import_format", "connector", "export_format"] },
+    "kind": { "enum": ["import_format", "connector", "export_format", "integration"] },
     "runtime": { "enum": ["declarative", "remote", "builtin"], "default": "declarative" },
     "summary": { "type": "string", "description": "Fallback für die Kurzbeschreibung, wenn README.md keinen Abschnitt hat" },
     "publisher": {
@@ -62,6 +62,17 @@
       "required": ["base_url"],
       "properties": { "base_url": { "type": "string", "pattern": "^https://" }, "secret_ref": { "type": "string" } }
     },
-    "builtin": { "enum": ["xml_damas", "xml_tdh"] }
+    "builtin": { "enum": ["xml_damas", "xml_tdh"] },
+    "integration": {
+      "type": "object",
+      "description": "Nur kind integration (Vertrag integration/1): Partner-App auf eigener Origin, arbeitet nur über die REST-API",
+      "required": ["area", "app_url", "api_access"],
+      "properties": {
+        "area": { "enum": ["input", "output", "monitoring"] },
+        "app_url": { "type": "string", "format": "uri", "description": "Oberfläche der Integration (https, eigene Origin)" },
+        "menu_label": { "type": "string" },
+        "api_access": { "type": "object", "required": ["level"], "properties": { "level": { "enum": ["read", "write", "manage"] } } }
+      }
+    }
   }
 }

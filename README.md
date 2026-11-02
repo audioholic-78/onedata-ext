@@ -12,6 +12,7 @@ https://github.com/audioholic-78/onedata-ext/tree/main/connectors/outdooractive
 | `connectors/` | Konnektor | destination.one, mein.toubiz, imx.Platform, DataCycle, JOIN, Outdooractive, Maptoolkit, Regiondo, OpenStreetMap, VBB, Wikidata, Digitalize the Planet, OpenWeather, SkiData, TYPO3, OGC API – Features, n8n |
 | `import/` | Datenmigration | DAMAS (XML), TDH (XML), generisches XML, generisches JSON |
 | `export/` | Export | DAMAS-XML, TDH-XML (eingebaute Formate, `runtime: builtin`) |
+| `integrations/` | Integration | one.pages, one.hardware (Partner-Apps, Vertrag `integration/1`, `runtime: remote`) |
 | `schema/` | – | JSON-Schema für `extension.json` (Editor-Unterstützung) |
 
 ## Versionen
